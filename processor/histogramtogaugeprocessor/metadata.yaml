@@ -1,0 +1,8 @@
+type: histogramtogauge
+
+status:
+  class: processor
+  stability:
+    development: [metrics]
+  codeowners:
+    active: [sergeysedoy97]
