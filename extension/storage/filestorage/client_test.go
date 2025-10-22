@@ -125,6 +125,9 @@ func TestClientBatchOperations(t *testing.T) {
 }
 
 func TestNewClientTransactionErrors(t *testing.T) {
+	if useBadger {
+		return
+	}
 	timeout := 100 * time.Millisecond
 
 	testKey := "testKey"
@@ -183,17 +186,20 @@ func TestNewClientTransactionErrors(t *testing.T) {
 			})
 
 			// Create a problem
-			require.NoError(t, client.db.Update(tc.setup))
+			require.NoError(t, client.boltdb.Update(tc.setup))
 
 			// Validate expected behavior
 			tc.validate(t, client)
 
-			require.NoError(t, client.db.Close())
+			require.NoError(t, client.boltdb.Close())
 		})
 	}
 }
 
 func TestNewClientErrorsOnInvalidBucket(t *testing.T) {
+	if useBadger {
+		return
+	}
 	temp := defaultBucket
 	defaultBucket = nil
 
@@ -208,6 +214,9 @@ func TestNewClientErrorsOnInvalidBucket(t *testing.T) {
 }
 
 func TestClientReboundCompaction(t *testing.T) {
+	if useBadger {
+		return
+	}
 	testCases := []struct {
 		testName                   string
 		reboundNeededThresholdMiB  int64
@@ -580,6 +589,9 @@ func BenchmarkClientInitLargeDB(b *testing.B) {
 }
 
 func BenchmarkClientCompactLargeDBFile(b *testing.B) {
+	if useBadger {
+		return
+	}
 	entrySizeInBytes := 1024 * 1024
 	entryCount := 2000
 	entry := make([]byte, entrySizeInBytes)
@@ -624,6 +636,9 @@ func BenchmarkClientCompactLargeDBFile(b *testing.B) {
 }
 
 func BenchmarkClientCompactDb(b *testing.B) {
+	if useBadger {
+		return
+	}
 	entrySizeInBytes := 1024 * 128
 	entryCount := 160
 	entry := make([]byte, entrySizeInBytes)

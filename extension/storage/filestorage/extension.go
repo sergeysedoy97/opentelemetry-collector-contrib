@@ -26,6 +26,8 @@ type localFileStorage struct {
 // Ensure this storage extension implements the appropriate interface
 var _ storage.Extension = (*localFileStorage)(nil)
 
+var useBadger = os.Getenv("OTELCOL_USE_BADGER") != ""
+
 func newLocalFileStorage(logger *zap.Logger, config *Config) (extension.Extension, error) {
 	if config.CreateDirectory {
 		var dirs []string
@@ -71,6 +73,9 @@ func (lfs *localFileStorage) GetClient(_ context.Context, kind component.Kind, e
 	}
 
 	rawName = sanitize(rawName)
+	if useBadger {
+		rawName += "_badger"
+	}
 	absoluteName := filepath.Join(lfs.cfg.Directory, rawName)
 
 	// Try to create client, handling panics if recreate is enabled

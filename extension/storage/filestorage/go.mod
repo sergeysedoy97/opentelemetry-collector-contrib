@@ -3,6 +3,7 @@ module github.com/open-telemetry/opentelemetry-collector-contrib/extension/stora
 go 1.24.0
 
 require (
+	github.com/dgraph-io/badger/v4 v4.8.0
 	github.com/google/uuid v1.6.0
 	github.com/stretchr/testify v1.11.1
 	go.etcd.io/bbolt v1.4.3
@@ -20,13 +21,18 @@ require (
 require github.com/go-viper/mapstructure/v2 v2.4.0 // indirect
 
 require (
+	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/dgraph-io/ristretto/v2 v2.2.0 // indirect
+	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/go-logr/logr v1.4.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
+	github.com/google/flatbuffers v25.2.10+incompatible // indirect
 	github.com/hashicorp/go-version v1.7.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
+	github.com/klauspost/compress v1.18.0 // indirect
 	github.com/knadh/koanf/maps v0.1.2 // indirect
 	github.com/knadh/koanf/providers/confmap v1.0.0 // indirect
 	github.com/knadh/koanf/v2 v2.3.0 // indirect

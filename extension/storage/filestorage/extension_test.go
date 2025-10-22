@@ -251,6 +251,9 @@ func TestComponentNameWithUnsafeCharacters(t *testing.T) {
 }
 
 func TestGetClientErrorsOnDeletedDirectory(t *testing.T) {
+	if useBadger {
+		return
+	}
 	ctx := t.Context()
 
 	tempDir := t.TempDir()
@@ -299,6 +302,9 @@ func newTestEntity(name string) component.ID {
 }
 
 func TestCompaction(t *testing.T) {
+	if useBadger {
+		return
+	}
 	ctx := t.Context()
 
 	tempDir := t.TempDir()
@@ -389,6 +395,9 @@ func TestCompaction(t *testing.T) {
 // TestCompactionRemoveTemp validates if temporary db used for compaction is removed afterwards
 // test is performed for both: the same and different than storage directories
 func TestCompactionRemoveTemp(t *testing.T) {
+	if useBadger {
+		return
+	}
 	ctx := t.Context()
 
 	tempDir := t.TempDir()
