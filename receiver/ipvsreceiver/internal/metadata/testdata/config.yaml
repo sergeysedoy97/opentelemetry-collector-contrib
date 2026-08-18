@@ -1,0 +1,232 @@
+default:
+all_set:
+  metrics:
+    ipvs.destination.connection.active.count:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.connection.inactive.count:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.connection.persistent.count:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.connection.rate:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.connection.total:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.connection.weight:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.in.rate:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.in.total:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.out.rate:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.out.total:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.packet.in.rate:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.packet.in.total:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.packet.out.rate:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.packet.out.total:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.service.connection.rate:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.connection.total:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.in.rate:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.in.total:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.out.rate:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.out.total:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.packet.in.rate:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.packet.in.total:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.packet.out.rate:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.packet.out.total:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.timeout:
+      enabled: true
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+reaggregate_set:
+  metrics:
+    ipvs.destination.connection.active.count:
+      enabled: true
+      attributes: []
+    ipvs.destination.connection.inactive.count:
+      enabled: true
+      attributes: []
+    ipvs.destination.connection.persistent.count:
+      enabled: true
+      attributes: []
+    ipvs.destination.connection.rate:
+      enabled: true
+      attributes: []
+    ipvs.destination.connection.total:
+      enabled: true
+      attributes: []
+    ipvs.destination.connection.weight:
+      enabled: true
+      attributes: []
+    ipvs.destination.in.rate:
+      enabled: true
+      attributes: []
+    ipvs.destination.in.total:
+      enabled: true
+      attributes: []
+    ipvs.destination.out.rate:
+      enabled: true
+      attributes: []
+    ipvs.destination.out.total:
+      enabled: true
+      attributes: []
+    ipvs.destination.packet.in.rate:
+      enabled: true
+      attributes: []
+    ipvs.destination.packet.in.total:
+      enabled: true
+      attributes: []
+    ipvs.destination.packet.out.rate:
+      enabled: true
+      attributes: []
+    ipvs.destination.packet.out.total:
+      enabled: true
+      attributes: []
+    ipvs.service.connection.rate:
+      enabled: true
+      attributes: []
+    ipvs.service.connection.total:
+      enabled: true
+      attributes: []
+    ipvs.service.in.rate:
+      enabled: true
+      attributes: []
+    ipvs.service.in.total:
+      enabled: true
+      attributes: []
+    ipvs.service.out.rate:
+      enabled: true
+      attributes: []
+    ipvs.service.out.total:
+      enabled: true
+      attributes: []
+    ipvs.service.packet.in.rate:
+      enabled: true
+      attributes: []
+    ipvs.service.packet.in.total:
+      enabled: true
+      attributes: []
+    ipvs.service.packet.out.rate:
+      enabled: true
+      attributes: []
+    ipvs.service.packet.out.total:
+      enabled: true
+      attributes: []
+    ipvs.service.timeout:
+      enabled: true
+      attributes: []
+none_set:
+  metrics:
+    ipvs.destination.connection.active.count:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.connection.inactive.count:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.connection.persistent.count:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.connection.rate:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.connection.total:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.connection.weight:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.in.rate:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.in.total:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.out.rate:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.out.total:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.packet.in.rate:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.packet.in.total:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.packet.out.rate:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.destination.packet.out.total:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port","forward_type","tunnel_port","tunnel_type","rip_address","rip_family","rip_port"]
+    ipvs.service.connection.rate:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.connection.total:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.in.rate:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.in.total:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.out.rate:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.out.total:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.packet.in.rate:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.packet.in.total:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.packet.out.rate:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.packet.out.total:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
+    ipvs.service.timeout:
+      enabled: false
+      attributes: ["netmask","protocol","sched","vip_address","vip_family","vip_port"]
