@@ -1,0 +1,107 @@
+---
+attributes:
+  dataset:
+    description: none
+    type: string
+  error.type:
+    description: none
+    type: string
+  exporter:
+    description: none
+    type: string
+  http.response.status_code:
+    description: none
+    type: int
+  metric:
+    description: none
+    type: string
+  namespace:
+    description: none
+    type: string
+display_name: Elasticsearch TSDS Exporter
+status:
+  class: exporter
+  codeowners:
+    active:
+      - sergeysedoy97
+  disable_codecov_badge: true
+  distributions: []
+  stability:
+    alpha:
+      - metrics
+telemetry:
+  metrics:
+    elasticsearch.bulk_requests.count:
+      attributes:
+        - dataset
+        - error.type
+        - exporter
+        - http.response.status_code
+        - namespace
+      description: none
+      enabled: true
+      prefix: otelcol.
+      stability: alpha
+      sum:
+        monotonic: true
+        value_type: int
+      unit: "1"
+    elasticsearch.bulk_requests.latency:
+      attributes:
+        - dataset
+        - error.type
+        - exporter
+        - http.response.status_code
+        - namespace
+      description: none
+      enabled: true
+      histogram:
+        bucket_boundaries: [0.1, 0.3, 0.5, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2.1, 2.3, 2.5, 2.7, 2.9, 3.1, 3.3, 3.5, 3.7, 3.9]
+        value_type: double
+      prefix: otelcol.
+      stability: alpha
+      unit: s
+    elasticsearch.datapoints.received:
+      attributes:
+        - dataset
+        - error.type
+        - exporter
+        - metric
+        - namespace
+      description: none
+      enabled: true
+      prefix: otelcol.
+      stability: alpha
+      sum:
+        monotonic: true
+        value_type: int
+      unit: "1"
+    elasticsearch.docs.processed:
+      attributes:
+        - dataset
+        - error.type
+        - exporter
+        - http.response.status_code
+        - namespace
+      description: none
+      enabled: true
+      prefix: otelcol.
+      stability: alpha
+      sum:
+        monotonic: true
+        value_type: int
+      unit: "1"
+    elasticsearch.docs.received:
+      attributes:
+        - dataset
+        - exporter
+        - namespace
+      description: none
+      enabled: true
+      prefix: otelcol.
+      stability: alpha
+      sum:
+        monotonic: true
+        value_type: int
+      unit: "1"
+type: elasticsearch_tsds
