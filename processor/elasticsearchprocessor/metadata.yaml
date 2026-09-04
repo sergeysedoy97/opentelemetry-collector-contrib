@@ -1,0 +1,13 @@
+---
+display_name: Elasticsearch Processor
+status:
+  class: processor
+  codeowners:
+    active:
+      - sergeysedoy97
+  disable_codecov_badge: true
+  distributions: []
+  stability:
+    alpha:
+      - metrics
+type: elasticsearch
