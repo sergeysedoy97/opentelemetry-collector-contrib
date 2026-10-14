@@ -1,0 +1,550 @@
+---
+attributes:
+  forward_type:
+    description: The forward type of the real service destination.
+    enum:
+      - masquerade
+      - local
+      - tunnel
+      - directroute
+      - bypass
+    requirement_level: recommended
+    type: string
+  netmask:
+    description: The netmask of the service.
+    requirement_level: recommended
+    type: string
+  protocol:
+    description: The protocol of the service.
+    enum:
+      - tcp
+      - udp
+      - sctp
+    requirement_level: recommended
+    type: string
+  rip_address:
+    description: The IP address of the real service destination.
+    requirement_level: recommended
+    type: string
+  rip_family:
+    description: The IP address family of the real service destination.
+    enum:
+      - inet
+      - inet6
+    requirement_level: recommended
+    type: string
+  rip_port:
+    description: The port of the real service destination.
+    requirement_level: recommended
+    type: string
+  sched:
+    description: The scheduler of the service.
+    enum:
+      - dh
+      - lblc
+      - lblcr
+      - lc
+      - mh
+      - nq
+      - rr
+      - sed
+      - sh
+      - wlc
+      - wrr
+    requirement_level: recommended
+    type: string
+  tunnel_port:
+    description: The tunnel port of the real service destination.
+    requirement_level: recommended
+    type: string
+  tunnel_type:
+    description: The tunnel type of the real service destination.
+    enum:
+      - ipip
+      - gue
+      - gre
+    requirement_level: recommended
+    type: string
+  vip_address:
+    description: The IP address of the virtual service.
+    requirement_level: recommended
+    type: string
+  vip_family:
+    description: The IP address family of the virtual service.
+    enum:
+      - inet
+      - inet6
+    requirement_level: recommended
+    type: string
+  vip_port:
+    description: The port of the virtual service.
+    requirement_level: recommended
+    type: string
+display_name: IPVS Receiver
+metrics:
+  ipvs.destination.connection.active.count:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Number of active connections to the destination.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: "1"
+  ipvs.destination.connection.inactive.count:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Number of inactive connections to the destination.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: "1"
+  ipvs.destination.connection.persistent.count:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Number of persistent connections to the destination.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: "1"
+  ipvs.destination.connection.rate:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Current connection rate (connections per second) to the destination.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: 1/s
+  ipvs.destination.connection.total:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Cumulative number of connections to the destination.
+    enabled: true
+    stability: development
+    sum:
+      aggregation_temporality: cumulative
+      monotonic: true
+      value_type: int
+    unit: "1"
+  ipvs.destination.connection.weight:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Current connection weight to the destination.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: "1"
+  ipvs.destination.in.rate:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Current incoming bytes rate (bytes per second) to the destination.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: By/s
+  ipvs.destination.in.total:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Cumulative number of incoming bytes to the destination.
+    enabled: true
+    stability: development
+    sum:
+      aggregation_temporality: cumulative
+      monotonic: true
+      value_type: int
+    unit: By
+  ipvs.destination.out.rate:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Current outgoing bytes rate (bytes per second) from the destination.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: By/s
+  ipvs.destination.out.total:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Cumulative number of outgoing bytes from the destination.
+    enabled: true
+    stability: development
+    sum:
+      aggregation_temporality: cumulative
+      monotonic: true
+      value_type: int
+    unit: By
+  ipvs.destination.packet.in.rate:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Current incoming packet rate (packets per second) to the destination.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: 1/s
+  ipvs.destination.packet.in.total:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Cumulative number of incoming packets to the destination.
+    enabled: true
+    stability: development
+    sum:
+      aggregation_temporality: cumulative
+      monotonic: true
+      value_type: int
+    unit: "1"
+  ipvs.destination.packet.out.rate:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Current outgoing packet rate (packets per second) from the destination.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: 1/s
+  ipvs.destination.packet.out.total:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+      - forward_type
+      - tunnel_port
+      - tunnel_type
+      - rip_address
+      - rip_family
+      - rip_port
+    description: Cumulative number of outgoing packets from the destination.
+    enabled: true
+    stability: development
+    sum:
+      aggregation_temporality: cumulative
+      monotonic: true
+      value_type: int
+    unit: "1"
+  ipvs.service.connection.rate:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+    description: Current connection rate (connections per second) for the service.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: 1/s
+  ipvs.service.connection.total:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+    description: Cumulative number of connections for the service.
+    enabled: true
+    stability: development
+    sum:
+      aggregation_temporality: cumulative
+      monotonic: true
+      value_type: int
+    unit: "1"
+  ipvs.service.in.rate:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+    description: Current incoming bytes rate (bytes per second) for the service.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: By/s
+  ipvs.service.in.total:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+    description: Cumulative number of incoming bytes for the service.
+    enabled: true
+    stability: development
+    sum:
+      aggregation_temporality: cumulative
+      monotonic: true
+      value_type: int
+    unit: By
+  ipvs.service.out.rate:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+    description: Current outgoing bytes rate (bytes per second) for the service.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: By/s
+  ipvs.service.out.total:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+    description: Cumulative number of outgoing bytes for the service.
+    enabled: true
+    stability: development
+    sum:
+      aggregation_temporality: cumulative
+      monotonic: true
+      value_type: int
+    unit: By
+  ipvs.service.packet.in.rate:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+    description: Current incoming packet rate (packets per second) for the service.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: 1/s
+  ipvs.service.packet.in.total:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+    description: Cumulative number of incoming packets for the service.
+    enabled: true
+    stability: development
+    sum:
+      aggregation_temporality: cumulative
+      monotonic: true
+      value_type: int
+    unit: "1"
+  ipvs.service.packet.out.rate:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+    description: Current outgoing packet rate (packets per second) for the service.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: 1/s
+  ipvs.service.packet.out.total:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+    description: Cumulative number of outgoing packets for the service.
+    enabled: true
+    stability: development
+    sum:
+      aggregation_temporality: cumulative
+      monotonic: true
+      value_type: int
+    unit: "1"
+  ipvs.service.timeout:
+    attributes:
+      - netmask
+      - protocol
+      - sched
+      - vip_address
+      - vip_family
+      - vip_port
+    description: Current timeout for the service.
+    enabled: true
+    gauge:
+      value_type: int
+    stability: development
+    unit: "1"
+reaggregation_enabled: true
+status:
+  class: receiver
+  codeowners:
+    active:
+      - sergeysedoy97
+  disable_codecov_badge: true
+  distributions: []
+  stability:
+    alpha:
+      - metrics
+type: ipvs
