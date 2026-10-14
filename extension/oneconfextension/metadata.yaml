@@ -1,0 +1,13 @@
+---
+display_name: 01.Conf Extension
+status:
+  class: extension
+  codeowners:
+    active:
+      - sergeysedoy97
+  disable_codecov_badge: true
+  distributions: []
+  stability:
+    alpha:
+      - extension
+type: one_conf
